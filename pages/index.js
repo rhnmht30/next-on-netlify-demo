@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import MyImage from "../components/MyImage";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -22,10 +22,23 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          {[1, 2, 3, 4].map((n, i) => (
+          {[1, 2].map((n, i) => (
             <Image key={i} src={`/coffee-${n}.jpg`} width={640} height={426} />
           ))}
+          {[3, 4].map((n, i) => (
+            <MyImage
+              key={i}
+              src={`/coffee-${n}.jpg`}
+              width={640}
+              height={426}
+            />
+          ))}
         </div>
+        <p className={styles.description}>
+          First 2 images are optimised through netlify functions and last 2
+          images are optimised using cloudinary as the loader. See the
+          difference in performance by disabling cache and throttling network.
+        </p>
       </main>
 
       <footer className={styles.footer}>
