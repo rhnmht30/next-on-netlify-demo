@@ -23,7 +23,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           {[1, 2, 3, 4].map((n, i) => (
-            <Image key={i} src={`/coffee-${n}.jpg`} width={640} height={426} />
+            <Image key={i} src={`/coffee-${n}.jpg`} width={640} height={426} priority/>
           ))}
         </div>
       </main>
